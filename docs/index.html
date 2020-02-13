@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- These tags are needed for enabling experimental Chrome APIs via Chrome's Origin-Trial program (Android, Windows): https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/available-trials.md#current-experimental-features -->
+    <!-- Origin Trial Token, feature = Generic Sensors, origin = https://github.io, expires = 2018-04-10 -->
+    <meta http-equiv="origin-trial" data-feature="Generic Sensors" data-expires="2018-04-10" content="Aokv0ODVMUPIswIBi6DnpAIjhWefEd8gD8GpVgdYgETj0C5+/3kKMzZE/FOrBwHcpBO6LHuVRrIw3yOT8EMmJAYAAABQeyJvcmlnaW4iOiJodHRwczovL2dpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiR2VuZXJpY1NlbnNvciIsImV4cGlyeSI6MTUyMzMxODQwMH0=">
+    <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://github.io, expires = 2018-05-07 -->
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2018-05-07" content="AgINztgDnjFV8da2D9SSzIITBRlHX8mduCR7DXfENxjr9ALduKOxBDdn2n66auQSlljVyhnRWWerxC0BWbE8pAoAAABOeyJvcmlnaW4iOiJodHRwczovL2dpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MjU3MjU4MDh9">
+    <title>project kuma001 renovation</title>
+    <meta name="description" content="VR Studio">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="styles/webvr.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">  
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- ShareMeta -->
+    <meta property="og:type" content="website" />
+        
+    <meta id="shareImg" property="og:image" name="twitter:image" content="https://www.simplitec.com/webvr/src/sharing.jpg"/> 
+
+    <meta property="og:site_name" content="project kuma001 renovation" />
+    <meta property="og:title" name="twitter:title" content="project kuma001 renovation" />
+    <meta property="og:description" name="twitter:description" content="VR Studio" />
+
+    <!-- Twitter-Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script src="./lib/simpliWebVR.js"></script>
+    <script src="./lib/mobile.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+
+  </head>
+  <body>   
+    <div id="javascript-error">
+      <p>To watch MAGIX Web VR you need to activate JavaScript in you browser.
+      <p>Bitte aktivieren Sie JavaScript.
+      <p>JavaScriptを有効にしてください。
+      <p>Por favor active javascript.
+      <p>Veuillez activer javascript.
+      <p>请激活javascript。
+    </div>
+
+    <div id="compatibility-error">
+      <p>It seems your browser does not support running WebVR content from file:// urls. Please upload it to an http server, or try a <a href="https://www.mozilla.org/firefox/new/">different browser</a>.
+      <p>Ihr Browser kann WebVR Projekte leider nicht von lokalen URL's abspielen. Bitte laden Sie das WebVR Projekt auf einen Web-Server oder benutzen Sie einen anderen Browser.
+      <p>他のブラウザを使用してください。 あなたのブラウザはfile：// urlsをサポートしていません。
+      <p>Por favor use otro navegador. Su navegador no soporta "file: //" urls.
+      <p>Veuillez utiliser un autre navigateur. Votre navigateur ne supporte pas les URL "file://".
+      <p>请使用其他浏览器。 您的浏览器不支持"file：//"网址。
+    </div>
+
+    <div id="safari-error">
+      <p>Your browser (Safari) is currently not supporting WebVR. Please use Chrome or Firefox.
+      <p>Ihr Browser (Safari) unterstützt WebVR leider nicht. Bitte benutzen Sie Chrome oder Firefox.      
+      <p>Su navegador (Safari) actualmente no es compatible con WebVR. Por favor utiliza Chrome o Firefox.      
+      <p>Votre navigateur (Safari) ne prend actuellement pas en charge WebVR. S'il vous plaît utiliser Chrome ou Firefox.    
+      <p>あなたのブラウザ（Safari）は現在WebVRをサポートしていません。 ChromeまたはFirefoxを使用してください。   
+      <p>您的浏览器（Safari）目前不支持WebVR。 请使用Chrome或Firefox。
+    </div>
+
+    <div id="content">
+      <div id="logo">
+        <img src="" alt="">
+      </div>  
+          
+      <div id="game">
+        <div id="gameContainer"></div>
+      </div>
+
+      <div id="loading_screen">      
+        <div id="info">
+          <div id="info_content">
+            <trans key="info_img"></trans>    
+          </div>  
+          <div class="info-icon">
+            <ul class="info bottom left">
+              <li id="visible">
+                <img draggable="false" class="menu-icon" id="info_icon" src="./src/images/ic_info.png">  
+              </li>
+            </ul>
+          </div>      
+            
+          <div id="menu">
+            <ul class="main bottom right">
+              <li id="visible" class="tooltip">
+                  <img draggable="false" class="menu-icon" src="src/images/menu/ic_menu.png">
+              </li>
+              <li class="tooltip">
+                  <img draggable="false" class="menu-icon" src="src/images/menu/ic_share.png">
+                  <ul class="sub">
+                    <li onclick="shareFacebook()">
+                      <img draggable="false" class="menu-icon" src="src/images/menu/share/fb_logo.png">
+                    </li>
+                    <li onclick="shareTwitter()">
+                      <img draggable="false" class="menu-icon" src="src/images/menu/share/tw_logo.png">
+                    </li>
+                    <li onclick="shareLinkedIn()">
+                      <img draggable="false" class="menu-icon" src="src/images/menu/share/ln_logo.png">
+                    </li>
+                  </ul>
+                  
+              </li>
+              <li onclick="switchFullscreen()" class="tooltip">
+                  <img draggable="false" id="toggle-fullscreen" class="menu-icon" src="src/images/menu/ic_fullscreen_on.png">
+              </li>
+              <li onclick="onToggleVR()" class="tooltip">
+                  <img draggable="false" id="toggle-vr" class="menu-icon" src="src/images/menu/ic_vr_on.png">
+              </li>
+          </ul> 
+          </div>
+        </div>
+        <div id="play_button">
+          <img class='button play' src="./src/images/ic_play.png" alt="PLAY" onclick="startUnityButton()">
+        </div>   
+        <div id="loader">   
+          <img id="background" alt="">     
+          <script>
+            checkImage("StreamingAssets/autoplay/loadingbg.jpg", function(){ 
+              document.getElementById('background').src = "StreamingAssets/autoplay/loadingbg.jpg";
+            }, function(){ 
+              document.getElementById('game').style.display = "none";
+            }); 
+          </script>        
+          <div id="loading" class="logo"> 
+            <div class="logo_progress center" id="loading_text">
+              <trans key="WebVR_Loading"></trans> <br>
+              <a id="firebaseLink" href="#" onclick="OnAppLink();">
+                <trans key="WebVR_CreateOwn"></trans>
+              </a><br>
+          </div>
+          <div id="progress" class="progress"></div>	
+        </div>  
+      </div>
+
+      <div id="vr">
+        <div id="status">
+          <strong>Ready!</strong>
+          <div id="icons">
+            <img src="./src/images/vr.png" height="36" alt="VR icon">
+            <template id="motion-controller">
+              <img src="./src/images/motion-controllers.png" height="33" alt="Motion Controller icon">
+            </template>
+          </div>
+          <small><a href="https://webvr.rocks/">Not working?</a></small>
+        </div>
+        <button id="entervr" value="Enter VR"></button>
+      </div>
+
+      <script src="vendor/gl-matrix-min.js"></script>
+      <script src="vendor/webvr-polyfill.min.js"></script>
+      <script src="./lib/webvr.js"></script>
+    </div>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-133431226-1', 'auto');
+      ga('send', 'pageview');
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'WEBVR',
+        eventAction: 'OPENURL',
+        eventLabel: window.location
+      });
+    </script>
+    <!-- End Google Analytics -->
+  </body>
+</html>

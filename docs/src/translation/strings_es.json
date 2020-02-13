@@ -1,0 +1,28 @@
+{
+	"Items": [
+		{
+			"Key": "WebVR_Loading",
+			"Value": "Cargando recorrido virtual"
+		},
+		{
+			"Key": "WebVR_TapHere",
+			"Value": "Aquí para abrir"
+		},
+		{
+			"Key": "WebVR_CreateOwn",
+			"Value": "Crear proyectos de realidad virtual"
+		},
+		{
+			"Key": "info_img",
+			"Value": "<img id='help' src='./src/images/info/vrx_bg_help_es.png' alt='vrx_help'>"
+		},
+		{
+			"Key": "WebVR_OnMobile_Text",
+			"Value": "MAGIX VR-X Player es la aplicación gratuita que te permite realizar visitas virtuales, descárgala aquí."
+		},
+		{
+			"Key": "WebVR_OnMobile",
+			"Value": "Utilizar la aplicación"
+		}
+	]
+}

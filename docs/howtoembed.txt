@@ -1,0 +1,17 @@
+To embed please use:
+
+<div id="embed-vrx">
+    <script src="[YOUR_URL]/vrxembed.js" allow="noautoplay" data-width="100%" data-height="100%" div-container="embed-vrx">
+    </script>
+</div>
+
+You can change width and height. 
+
+<div id="embed-vrx">
+    <script src="https://drive.google.com/drive/folders/14h4VEDk-C0r9KGxkHL8z59fZaVh5S0G-?usp=sharing" allow="noautoplay" data-width="100%" data-height="100%" div-container="embed-vrx">
+    </script>
+</div>
+
+https://drive.google.com/open?id=1hMabCgqXTVKA2LSt6ox2pBL-0Cbzhz1p
+https://drive.google.com/open?id=1hMabCgqXTVKA2LSt6ox2pBL-0Cbzhz1p
+https://drive.google.com/open?id=1spcsPagMX1VeocFD0OR0Bptd1znRDYsE

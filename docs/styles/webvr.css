@@ -1,0 +1,290 @@
+html, body {
+  background-color: #000;
+  font-size: 16px;
+  overflow: hidden;
+  /* NOTE: Don't use `-apple-system` at the head of a shorthand font declaration.
+     See https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f for more info. */
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html, body, #canvas, #loader {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  width: 100%;
+}
+
+a:link, a:visited {
+  color: #ffffff;
+}
+
+
+#loading_screen {
+  height: 100%;
+}
+
+/*
+[data-unity-loaded='true'] #loader {
+  display: none;
+}*/
+
+#game {
+  position: absolute;
+}
+
+#progress {
+  bottom: 0;
+  height: 20px;
+  position: fixed;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  color: #ffffff;
+  height: 180%;
+  justify-content: center;
+  position: relative;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#loading {
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* loading dots */
+.logo_progress:after {
+  content: ' .';
+  animation: dots 2s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  40% {
+    color: #fff;
+    text-shadow:
+      .25em 0 0 rgba(0,0,0,0),
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    text-shadow:
+      .25em 0 0 #fff,
+      .5em 0 0 rgba(0,0,0,0);
+  }
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 #fff,
+      .5em 0 0 #fff;
+  }
+}
+
+#canvas {
+  display: block;
+  position: absolute;
+  z-index: 0;
+}
+
+#vr {
+  position: absolute;
+  display: none;
+  right: 30px;
+  bottom: 30px;
+}
+
+#status {
+  display: none;
+  background: #fff;
+  margin-right: 15px;
+  padding: 10px;
+}
+
+[data-unity-loaded='true'] #status[data-enabled='true'] {
+  display: block;
+}
+
+#vr button {
+  border: none;
+}
+
+#entervr {
+  background: #fff url(../src/images/vr.png) center no-repeat;
+  background-size: 80%;
+  cursor: pointer;
+  display: none;
+  height: 100px;
+  width: 100px;
+}
+
+[data-unity-loaded='true'] #entervr[data-enabled='true'] {
+  display: block;
+}
+
+#progress,
+#entervr:hover,
+#instruction button {
+  background-color: #ffffff;
+}
+
+#instruction {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+#instruction button {
+  color: #000000;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 15px 20px;
+}
+
+#icons {
+  display: flex;
+}
+
+.panel {
+  background: #fff;
+  display: none;
+  max-width: 50%;
+  padding: 10px 30px;
+  pointer-events: all;
+}
+
+.panel[data-enabled='true'] {
+  display: block;
+}
+
+.center {
+  text-align: center;
+}
+
+div.firebaseLink {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: #FFF;
+  width: 85%;
+}
+
+div.firebaseLink > a > img {
+  width: 50%;
+  height: auto;
+  max-height: 512px;
+  max-width: 512px;
+}
+
+img#help, div#javascript-error, #compatibility-error, div#play_button,
+#safari-error {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 30pt;
+  z-index: 1;
+}
+
+#help {
+  pointer-events: none;
+}
+
+#javascript-error {
+  z-index: 99 !important;
+  color: #ffffff;
+}
+
+#compatibility-error, div#safari-error {
+  
+  color: #ffffff;
+  visibility: hidden;
+}
+
+#compatibility-error {
+  z-index: 98 !important;
+}
+
+#safari-error {
+  z-index: 97 !important;
+}
+
+#content {
+  display: none;
+}
+
+#background{
+  color: #999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-height: 740px), (max-width: 600px) {
+  div#play_button img {
+    height: 100px;
+  }
+
+  div.firebaseLink {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 900px), (max-width: 1500px) {
+  #help {
+    height: 600px;
+    position: relative
+  }
+}
+
+@media (max-height: 740px), (max-width: 1200px) {
+  #help {
+    height: 500px;
+    position: relative
+  }
+}
+
+#logo {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  padding-left: 20px;
+  padding-top: 20px
+}
+
+#play_button {
+  visibility: hidden;
+}
+
+.button.play {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.button.play:hover {
+  opacity: 1;
+}
+
+
+
+

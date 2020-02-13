@@ -1,0 +1,28 @@
+{
+	"Items": [
+		{
+			"Key": "WebVR_Loading",
+			"Value": "Loading virtual tour"
+		},
+		{
+			"Key": "WebVR_TapHere",
+			"Value": "Tap here to open"
+		},
+		{
+			"Key": "WebVR_CreateOwn",
+			"Value": "Create your own VR projects"
+		},
+		{
+			"Key": "info_img",
+			"Value": "<img id='help' src='./src/images/info/vrx_bg_help_en.png' alt='vrx_help'>"
+		},
+		{
+			"Key": "WebVR_OnMobile_Text",
+			"Value": "You need to download the free  MAGIX VR-X Player app to view this virtual tour."
+		},
+		{
+			"Key": "WebVR_OnMobile",
+			"Value": "Open in the app"
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"Items": [
+		{
+			"Key": "WebVR_Loading",
+			"Value": "Caricamento del tour virtuale in corso"
+		},
+		{
+			"Key": "WebVR_TapHere",
+			"Value": "Clicca qui per aprire"
+		},
+		{
+			"Key": "WebVR_CreateOwn",
+			"Value": "Crea i tuoi progetti VR personali"
+		},
+		{
+			"Key": "info_img",
+			"Value": "<img id='help' src='./src/images/info/vrx_bg_help_it.png' alt='vrx_help'>"
+		},
+		{
+			"Key": "WebVR_OnMobile_Text",
+			"Value": "Per visualizzare il tour virtuale hai bisogno di MAGIX VR-X Player, scaricabile gratuitamente."
+		},
+		{
+			"Key": "WebVR_OnMobile",
+			"Value": "Continua nella app"
+		}
+	]
+}

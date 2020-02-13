@@ -1,0 +1,13 @@
+{
+"companyName": "Magix Software GmbH",
+"productName": "MAGIX VR-X Player",
+"dataUrl": "webvr.data.unityweb",
+"wasmCodeUrl": "webvr.wasm.code.unityweb",
+"wasmFrameworkUrl": "webvr.wasm.framework.unityweb",
+"TOTAL_MEMORY": 67108864,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}

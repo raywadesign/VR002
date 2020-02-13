@@ -1,0 +1,9 @@
+body {
+    background-color: #000;
+    background-size: cover;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../StreamingAssets/autoplay/loadingbg.jpg");
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../StreamingAssets/autoplay/loadingbg.jpg");
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../StreamingAssets/autoplay/loadingbg.jpg");
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../StreamingAssets/autoplay/loadingbg.jpg");
+}
